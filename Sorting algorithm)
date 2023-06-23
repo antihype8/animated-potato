@@ -1,0 +1,20 @@
+def bubble_sort(arr):
+    n = len(arr)
+
+    for i in range(n - 1):
+        for j in range(n - i - 1):
+            if arr[j] > arr[j + 1]:
+                arr[j], arr[j + 1] = arr[j + 1], arr[j]
+
+    return arr
+
+if __name__ == "__main__":
+    elements = input("Enter space-separated numbers to sort: ").split()
+    numbers = [int(num) for num in elements]
+
+    sorted_numbers = bubble_sort(numbers)
+
+    print("Sorted numbers: ", end="")
+    for num in sorted_numbers:
+        print(num, end=" ")
+    print()
